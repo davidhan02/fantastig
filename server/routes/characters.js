@@ -84,7 +84,6 @@ router.post(
 
             let foundCharacter = await Character.findOne({ characterName });
             if (foundCharacter) {
-                console.log(foundCharacter);
                 return res.status(400).json({
                     error: [{ msg: "character with that name already exists" }],
                 });

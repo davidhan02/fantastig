@@ -8,6 +8,7 @@ import Home from "./components/pages/Home";
 import Login from "./components/pages/Login";
 import Register from "./components/pages/Register";
 import CharacterForm from "./components/characters/CharacterForm";
+import PrivateRoute from "./components/routing/PrivateRoute";
 
 if (localStorage.token) {
     setAuthToken(localStorage.token);
@@ -25,7 +26,7 @@ const App = () => (
                         <Route exact path="/" component={Home} />
                         <Route path="/login" component={Login} />
                         <Route path="/register" component={Register} />
-                        <Route path="/form" component={CharacterForm} />
+                        <PrivateRoute path="/form" component={CharacterForm} />
                     </Switch>
                 </div>
             </Router>

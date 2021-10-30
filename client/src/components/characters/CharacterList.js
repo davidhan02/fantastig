@@ -6,7 +6,7 @@ import AuthContext from "../../context/authContext/authContext";
 const CharacterList = (props) => {
     const { characters, getCharacters, editOneCharacter, deleteCharacter } =
         useContext(CharacterContext);
-    const { loading, isAuthenticated } = useContext(AuthContext);
+    const { user, loading, isAuthenticated } = useContext(AuthContext);
 
     useEffect(() => {
         getCharacters();
@@ -19,6 +19,11 @@ const CharacterList = (props) => {
         if (confirmAction) {
             deleteCharacter(id);
         }
+    };
+
+    const handleEdit = (character) => {
+        editOneCharacter(character);
+        props.history.push("/form");
     };
 
     if (characters === null || characters.length === 0) {
@@ -72,16 +77,15 @@ const CharacterList = (props) => {
                             <button
                                 type="button"
                                 className="btn btn-primary"
-                                onClick={() => {
-                                    editOneCharacter(character);
-                                    props.history.push("/form");
-                                }}
+                                disabled={!user || user._id !== character.user}
+                                onClick={() => handleEdit(character)}
                             >
                                 Edit
                             </button>
                             <button
                                 type="button"
                                 className="btn btn-danger"
+                                disabled={!user || user._id !== character.user}
                                 onClick={() => handleRemove(character._id)}
                             >
                                 Delete

@@ -23,3 +23,5 @@ yarn-error.log*
 
 # config
 /server/config/dev.js
+
+fantastig.bundle
