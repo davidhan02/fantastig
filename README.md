@@ -1,5 +1,7 @@
 # FANTASTIG
 
+Full stack web application using Mongoose, Express, React (with Hooks), and NodeJS. Authentication is done through the usage of JWT tokens and bcrypt.
+
 Live Heroku deployment: https://fantastig.herokuapp.com/
 
 ## Quick Start
