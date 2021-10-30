@@ -1,6 +1,6 @@
 # FANTASTIG
 
-Live Heroku deployment:
+Live Heroku deployment: https://fantastig.herokuapp.com/
 
 ## Quick Start
 
